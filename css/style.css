@@ -1,0 +1,132 @@
+@import "null.css";
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic&display=swap);
+
+@font-face {
+    font-family: potek;
+    src: url("../fonts/potek.woff2") format("woff2"), url("../fonts/potek.woff") format("woff");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Coffe;
+    src: url("../fonts/CoffeeBear.woff2") format("woff2"), url("../fonts/CoffeeBear.woff") format("woff");
+    font-weight: 400;
+    font-display: swap;
+}
+
+/* специфичность 011 */
+li.second {
+    color: rgb(154, 223, 223);
+}
+
+/* специфичность 034!!!  */
+/* ul > li.first.one > ul > li.second {
+    color: black;
+} */
+
+/* специфичность 044!!! овер-ДОХУЯ */
+ul > li.first.one > ul > li.second.one {
+    color: rgb(218, 14, 14);
+    text-decoration: underline;
+}
+
+/* специфичность 021 */
+li.first.one {
+    color: rgb(235, 208, 135);
+}
+
+/* специфичность 011 */
+.first > ul {
+    color: rgb(182, 225, 65);
+}
+
+.second-list > li {
+    color: rgb(206, 59, 14);
+}
+
+/* специфичность 010 */
+.first {
+    font-size: 18px;
+    color: royalblue;
+}
+
+/* специфичность 022 */
+ul > li.one.first {
+    color: saddlebrown;
+}
+/* специфичность 020 */
+.first.two {
+    font-size: 20px;
+    font-family: coffe;
+    color: rgba(255, 255, 0, 0.384);
+}
+.three {
+    font-size: 18px;
+    color: rgb(0, 255, 76);
+}
+.four {
+    font-family: "El Messiri", sans-serif;
+}
+.five {
+    font-family: "El Messiri", sans-serif;
+    font-weight: 700;
+}
+.six {
+    text-indent: 5px;
+}
+.seven {
+    text-shadow: 10px -5px 5px green;
+}
+.eight {
+    text-decoration: underline;
+}
+.nine {
+    word-spacing: 40px;
+}
+.ten {
+    text-decoration: line-through;
+    text-shadow: 2px 2px 2px rgb(206, 59, 14);
+}
+/* специфичность 044!!! овер-ДОХУЯ */
+ul > li.first.two > ul > li.second.two {
+    color: black;
+    font-size: 40px;
+}
+.ten.second {
+    letter-spacing: 10px;
+}
+
+.second-second {
+    font-size: 25px;
+}
+
+.second-second.two {
+    text-shadow: 2px 2px 2px rgb(0, 252, 0);
+}
+/* ======================================================= */
+/*== из этих трех == */
+
+/* у этого 044, но он слаее чем .six-six, так как у того более уточнено */
+ul > li.first.two > ul > li.second-second.six {
+    color: rgb(252, 252, 252);
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+/* у этого 055, но сильнее он, только из-за хвостика six-six, без нее следующая сильнее, хотя всего 010,
+но те св-ва которых тут нет, будут браться из следующего по спецефичности */
+ul > li.first.two > ul > li.second-second.six > p.six-six {
+    color: black;
+    text-transform: uppercase;
+}
+
+.six-six {
+    color: red;
+    text-transform: capitalize;
+    line-height: 500%;
+}
+a {
+    text-shadow: 2px 0 2px hotpink, 4px 2px 2px rgb(89, 108, 219);
+    text-decoration: underline;
+}
